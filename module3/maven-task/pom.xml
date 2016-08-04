@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<modelVersion>4.0.0</modelVersion>
+<groupId>com.mtn.app</groupId>
+<artifactId>karotkin_maven-app</artifactId>
+<packaging>jar</packaging>
+<version>1.0</version>
+<name>Maven_Task</name>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<timestamp>${maven.build.timestamp}</timestamp>
+		<maven.build.timestamp.format>yyy-MM-dd_HH:mm</maven.build.timestamp.format>
+	</properties>
+
+<build>
+<defaultGoal>clean install</defaultGoal>
+<directory>${project.basedir}/target</directory>
+<finalName>${project.artifactId}-${project.version}-${maven.build.timestamp}</finalName>	
+	<plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+				<finalName>${project.version}-${maven.build.timestamp}</finalName>
+				<descriptor>src/assembly/assembly.xml</descriptor>
+				</configuration>		
+			<executions>
+				<execution>
+					<phase>package</phase>
+					<goals>
+						<goal>single</goal>
+					</goals>
+				</execution>
+			</executions>
+		</plugin>
+	</plugins>
+</build>
+
+<dependencies>
+
+<dependency>
+    <groupId>commons-collections</groupId>
+    <artifactId>commons-collections</artifactId>
+    <version>3.2.1</version>
+</dependency>
+
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.4</version>
+</dependency>
+
+</dependencies>
+
+</project>	
+			
