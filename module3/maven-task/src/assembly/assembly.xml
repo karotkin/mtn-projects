@@ -1,6 +1,6 @@
 <assembly>
 	<formats>
-		<format>tar</format>
+		<format>tar.gz</format>
 	</formats>
 	<fileSets>
 		<fileSet>
