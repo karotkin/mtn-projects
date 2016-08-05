@@ -15,7 +15,7 @@
 	</properties>
 
 <build>
-<defaultGoal>install</defaultGoal>
+<defaultGoal>clean install</defaultGoal>
 <directory>${project.basedir}/target</directory>
 <finalName>${project.artifactId}-${project.version}-${maven.build.timestamp}</finalName>	
 	<plugins>
